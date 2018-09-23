@@ -63,7 +63,7 @@ question phase
     display: flex;
     height: 80%;
     width: 70%;
-    margin: 5% auto 5% 5%;
+    margin: 5% 15% 5% 15%;
     border-radius: 5%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -122,14 +122,14 @@ question phase
 audio player 
 
 */
-.audioPlayer {
+/* .audioPlayer {
     margin-top: 10%;
     background-color: red;
     width: 20%;
     height: 20%;
     float: right;
     margin-right: 1%;
-}
+} */
 
 /* 
 
@@ -147,7 +147,6 @@ summary
     background-repeat: no-repeat;
     background-position: center center;
     background-color: aquamarine;
-
 }
 
 #top {
