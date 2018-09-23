@@ -109,17 +109,47 @@ $('questionPosition').html(questionPosition);
 var questionPlace = 1;
 
 
-// timer //////////////
-var time = 30;
-var timeInterval = setInterval(timeDecrease, 1000)
-function timeDecrease() {
-    time--;
+// timer
+var resetTimer;
+function timer() {
+    var timer = 30;
+    function startTime() {
+        timer--;
+        $('#timer').html(timer);
+        if (timer === 0) {
+            wrongResponse++;
+            $('#incorrectAnswers').html('Correct Answers: ' + wrongResponse);
+            questionPosition++;
+            if (questionPosition === 11) {
+                questionPosition = 1;
+                enterSummaryPage();
+            };
+            setTimeout(function() {
+                $('#question').fadeOut();
+                $('.choices').fadeOut();
+            }, 1000);
+            setTimeout(function() {
+                $('#questionPosition').html(questionPosition).fadeIn();
+            },1200)
+            setTimeout(function() {
+                $('#questionPosition').html(questionPosition);
+                resetClick();
+                $('#question').fadeIn();
+                $('.choices').fadeIn();
+                $('#timer').html(timer);
+                questionPlace++;
+                if (questionPlace === 11) {
+                    questionPlace = 1;
+                    enterSummaryPage();
+                };
+                questionPhase(questionPlace);
+            }, 1500);
+        }
+    }
+    clearInterval(resetTimer);
+    resetTimer = setInterval(startTime, 1000);
 }
 
-setTimeout(function() {
-    clearInterval(timeInterval);
-}, 5000);
-///////////////////////
 // question and choice phase
 var choice1 = $('#choice1');
 var choice2 = $('#choice2');
@@ -165,6 +195,7 @@ function choices(choicesNumber, questionPlace) {
             resetClick();
             $('#question').fadeIn();
             $('.choices').fadeIn();
+            $('#timer').html(timer);
             questionPlace++;
             if (questionPlace === 11) {
                 questionPlace = 1;
@@ -211,6 +242,7 @@ function choices(choicesNumber, questionPlace) {
             };
             $('#question').fadeIn();
             $('.choices').fadeIn();
+            $('#timer').html(timer);
             questionPhase(questionPlace);
         }, 1500);
     }
@@ -234,6 +266,7 @@ function questionPhase(questionPlace) {
     $('#choice4').click(function() {
         choices(choice4, questionPlace);
     })
+    timer();
 }
 questionPhase(1);
 
