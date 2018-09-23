@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <title>Disney Trivia Game</title>
+</head>
+<body>    
+<!--   Welcome Screen   -->
+<div class="welcomeScreen">
+    <div id="welcomeMessage">
+        <h1>Welcome</h1>
+    </div>
+    <div id="centerMessage">
+        <h1>Disney Trivia</h1>
+    </div>
+    
+    <div id="enterMessage">
+        <h1 id="clickHere">Click Here</h1>
+        <h1>For a journey to happily ever after</h1>
+    </div>
+</div>
+<!--   Question Screen   -->
+<div class="questionPhaseBackground">
+    <div class="questionPhase">
+        <div id="questionPosition">1</div>
+        <div id="question"></div>
+        <div class="choices" id="choice1"></div>
+        <div class="choices" id="choice2"></div>
+        <div class="choices" id="choice3"></div>
+        <div class="choices" id="choice4"></div>
+    </div>
+</div>
+<!-- <div class="audioPlayer">
+
+</div> -->
+<!--   Final Screen   -->
+<div class="summary">
+    <div id="top">
+        <p id="correctAnswers">Correct Answers:</p>
+        <p id="incorrectAnswers">Incorrect Answers: </p>
+    </div>
+    <div id="bot">
+        <p id="restart">Restart</p>
+    </div>
+    <!-- show the number of correct answers, incorrect answers, and an option to restart the game(without reloading the page). -->
+</div>
+    
+
+
+<div id="log"></div>
+        
+        
+        
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
